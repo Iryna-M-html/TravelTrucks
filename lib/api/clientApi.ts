@@ -37,7 +37,7 @@ export const fetchCampers = async ({
   }
 
   const res = await nextServerApi.get("/campers", { params });
-
+  console.log("Данные из API:", res.data);
   return res.data.items;
 };
 
