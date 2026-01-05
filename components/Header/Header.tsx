@@ -1,31 +1,40 @@
-import css from "./Header.module.css";
+"use client";
+
 import Link from "next/link";
 
-import TagsMenu from "../TagsMenu/TagsMenu";
-import AuthNavigation from "../AuthNavigation/AuthNavigation";
-
-const Header = () => {
+export default function Header() {
   return (
-    <header className={css.header}>
-      <Link href="/" aria-label="Home" className={css.headerLink}>
-        NoteHub
-      </Link>
-      <nav aria-label="Main Navigation">
-        <ul className={css.navigation}>
-          <li className={css.navigationItem}>
-            <Link href="/">Home</Link>
-          </li>
-          {/* <li>
-            <Link href="/profile">Profile</Link>
-          </li> */}
-          <li className={css.navigationItem}>
-            <TagsMenu />
-          </li>
-          <AuthNavigation />
-        </ul>
-      </nav>
+    <header>
+      <div className="container">
+        <div>
+          {/* Logo */}
+          <Link href="/">
+            {/* <svg width={136} height={16}>
+              <use href="/  "></use>
+            </svg> */}
+          </Link>
+
+          {/* Desktop navigation */}
+          <ul>
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/catalog">Catalog</Link>
+            </li>
+          </ul>
+
+          {/* Desktop favorites */}
+          {/* <div>
+            <Button />
+          </div> */}
+
+          {/* Mobile menu button */}
+          {/* <div>
+            <Menu />
+          </div> */}
+        </div>
+      </div>
     </header>
   );
-};
-
-export default Header;
+}
