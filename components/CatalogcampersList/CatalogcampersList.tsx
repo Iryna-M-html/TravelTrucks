@@ -2,7 +2,8 @@
 import type { Camper } from "../../types/camper";
 
 import css from "./CatalogcampersList.module.css";
-import Link from "next/link";
+
+import Image from "next/image";
 
 interface CampersListProps {
   campers: Camper[];
@@ -22,9 +23,15 @@ const CampersList = ({ campers }: CampersListProps) => {
           transmission,
           engine,
           AC,
+          gallery,
         }) => (
           <li key={id} className={css.card}>
-            {/* <img src="/placeholder.jpg" alt={name} className={css.image} /> */}
+            <Image
+              src={gallery[0]?.thumb || "/placeholder.jpg"}
+              alt={name}
+              width={292}
+              height={320}
+            />
 
             <div className={css.content}>
               <div className={css.header}>

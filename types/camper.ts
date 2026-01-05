@@ -13,11 +13,13 @@ export interface Camper {
   bathroom: boolean;
   kitchen: boolean;
   TV: boolean;
-
-  // tag: NoteTag;
+  gallery: CamperGallery[];
+}
+export interface CamperGallery {
+  thumb: string;
+  original: string;
 }
 
-// export type NoteTag = "Todo" | "Work" | "Personal" | "Meeting" | "Shopping";
 // {
 //       "id": "2",
 //       "name": "Cruise America C-21",
