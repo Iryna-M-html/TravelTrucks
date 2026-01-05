@@ -103,3 +103,39 @@
 .button:hover {
   background-color: #dc2626;
 }
+
+.loadmorebutton {
+  width: 145px;
+  padding: 16px 32px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #101828;
+  background-color: #ffffff;
+  border: 1px solid #d0d5dd;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.loadmorebutton {
+  border-color: #e44848;
+}
+
+.loadmorebutton {
+  background-color: #f9fafb;
+  border-color: #e44848;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 185px;
+  align-items: center;
+}

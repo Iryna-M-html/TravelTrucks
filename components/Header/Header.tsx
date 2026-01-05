@@ -12,9 +12,9 @@ export default function Header() {
         <div>
           {/* Logo */}
           <Link href="/" className={css.logoLink}>
-            {/* <svg width={136} height={16}>
-              <use href="/  "></use>
-            </svg> */}
+            <svg width={136} height={16}>
+              <use href="/public/img/logo.svg"></use>
+            </svg>
           </Link>
 
           {/* Desktop navigation */}
