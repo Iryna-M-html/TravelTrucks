@@ -6,7 +6,7 @@ import {
   QueryClient,
 } from "@tanstack/react-query";
 import NotesClient from "./Notes.client";
-import type { NoteTag } from "@/types/note";
+import type { NoteTag } from "@/types/camper";
 
 interface FiltersPageProps {
   params: Promise<{ slug: string[] }>;

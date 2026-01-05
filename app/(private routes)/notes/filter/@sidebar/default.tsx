@@ -2,7 +2,7 @@ import { tags } from "@/constans/tags";
 import css from "@/components/SidebarNotes/SidebarNotes.module.css";
 import Link from "next/link";
 import { fetchNotes } from "@/lib/api/clientApi";
-import { type Note } from "@/types/note";
+import { type Note } from "@/types/camper";
 
 const SidebarNotes = () => {
   return (

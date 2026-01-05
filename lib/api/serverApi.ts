@@ -1,5 +1,5 @@
 import { User } from "@/types/user";
-import type { Note, NoteTag } from "../../types/note";
+import type { Note, NoteTag } from "../../types/camper";
 import { nextServerApi, SessionResponse } from "./api";
 import { cookies } from "next/headers";
 

@@ -6,13 +6,13 @@ import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { fetchNotes, FetchNotesResponse } from "@/lib/api/clientApi";
 import SearchBox from "@/components/SearchBox/SearchBox";
 import Pagination from "@/components/Pagination/Pagination";
-import NoteList from "@/components/NoteList/NoteList";
+import NoteList from "@/components/CatalogcampersList/CatalogcampersList";
 import Modal from "@/components/Modal/Modal";
 import NoteForm from "@/components/NoteForm/NoteForm";
 import { useEffect, useState } from "react";
 import LoadingIndicator from "./loading";
 import ErrorMessage from "./error";
-import { NoteTag } from "@/types/note";
+import { NoteTag } from "@/types/camper";
 import Link from "next/link";
 
 interface NoteClientProps {

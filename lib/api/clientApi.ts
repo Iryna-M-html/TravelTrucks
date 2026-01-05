@@ -1,4 +1,4 @@
-import type { Note, NoteTag } from "../../types/note";
+import type { Note, NoteTag } from "../../types/camper";
 import { User, RegisterRequest, LoginRequest, EditRequest } from "@/types/user";
 import { nextServerApi, SessionResponse } from "./api";
 
