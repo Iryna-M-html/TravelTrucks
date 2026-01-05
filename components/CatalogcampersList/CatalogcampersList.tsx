@@ -7,15 +7,6 @@ import Link from "next/link";
 interface CampersListProps {
   campers: Camper[];
 }
-//  id: string;
-//  name: string;
-//  price: number;
-//  rating: number;
-//  location: string;
-//  description: string;
-//  transmission: string; //automatic
-//  engine: string;
-//  AC: boolean;
 
 const CampersList = ({ campers }: CampersListProps) => {
   return (
@@ -32,24 +23,30 @@ const CampersList = ({ campers }: CampersListProps) => {
           engine,
           AC,
         }) => (
-          <li key={id} className={css.listItem}>
-            <div>
-              <h2 className={css.name}>{name}</h2>
-              <p className={css.price}>{price}</p>
-              <p className={css.rating}>{rating}</p>
-              <p className={css.location}>{location}</p>
-              <p className={css.description}>{description}</p>
-              <p className={css.transmission}>{transmission}</p>
-              <p className={css.engine}>{engine}</p>
-              <p className={css.AC}>{AC}</p>
-            </div>
-            {/* <div className={css.footer}>
-              <span className={css.tag}>{tag}</span>
+          <li key={id} className={css.card}>
+            {/* <img src="/placeholder.jpg" alt={name} className={css.image} /> */}
 
-              <Link href={`/notes/${id}`} className={css.link}>
-                View details
-              </Link>
-            </div> */}
+            <div className={css.content}>
+              <div className={css.header}>
+                <h2 className={css.name}>{name}</h2>
+                <span className={css.price}>€{price}.00</span>
+              </div>
+
+              <div className={css.meta}>
+                <span className={css.rating}>⭐ {rating}</span>
+                <span className={css.location}>{location}</span>
+              </div>
+
+              <p className={css.description}>{description}</p>
+
+              <ul className={css.features}>
+                <li>{transmission}</li>
+                <li>{engine}</li>
+                {AC && <li>AC</li>}
+              </ul>
+
+              <button className={css.button}>Show more</button>
+            </div>
           </li>
         )
       )}

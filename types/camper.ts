@@ -1,3 +1,5 @@
+export type EquipmentKey = "AC" | "automatic" | "kitchen" | "TV" | "bathroom";
+
 export interface Camper {
   id: string;
   name: string;
