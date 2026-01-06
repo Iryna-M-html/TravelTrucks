@@ -3,11 +3,11 @@ import css from "./SidebarFilters.module.css";
 const SidebarFilters = () => {
   // Список оборудования для фильтрации
   const equipment = [
-    { id: "AC", label: "AC", icon: "icon-ac" },
+    { id: "AC", label: "AC", icon: "icon-hugeicons_gas-stove" },
     { id: "transmission", label: "Automatic", icon: "icon-automatic" },
     { id: "kitchen", label: "Kitchen", icon: "icon-kitchen" },
     { id: "TV", label: "TV", icon: "icon-tv" },
-    { id: "bathroom", label: "Bathroom", icon: "icon-bathroom" },
+    { id: "bathroom", label: "Bathroom", icon: "icon-water-drop" },
   ];
 
   // Список типов техники
