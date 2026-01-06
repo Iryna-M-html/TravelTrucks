@@ -1,8 +1,10 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  padding: 0 24px;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 450px;
+  padding: 28px 64px;
   border-bottom: 1px solid var(--badges);
   background: var(--inputs);
 }
@@ -31,10 +33,10 @@
 .active {
   color: var(--button-hover);
 }
-.logoLink {
+/* .logoLink {
   font-family: "Inter", sans-serif;
   --black: #3e3e3e;
   --background: #f0f2f8;
   --blue: #007aff;
   --white: #fff;
-}
+} */

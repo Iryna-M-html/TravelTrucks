@@ -9,38 +9,36 @@ export default function Header() {
   return (
     <div className="container">
       <header className={css.header}>
-        <div>
-          {/* Logo */}
-          <Link href="/" className={css.logoLink}>
-            <svg width={136} height={16}>
-              <use href="/public/img/logo.svg"></use>
-            </svg>
-          </Link>
+        {/* Logo */}
+        <Link href="/" className={css.logoLink}>
+          <svg width={136} height={16}>
+            <use href="/img/icons.svg#icon-Logo"></use>
+          </svg>
+        </Link>
 
-          {/* Desktop navigation */}
-          <ul className={css.navigation}>
-            <li className={pathname === "/" ? css.active : css.navigationItem}>
-              <Link href="/">Home</Link>
-            </li>
-            <li
-              className={
-                pathname === "/catalog" ? css.active : css.navigationItem
-              }
-            >
-              <Link href="/catalog">Catalog</Link>
-            </li>
-          </ul>
+        {/* Desktop navigation */}
+        <ul className={css.navigation}>
+          <li className={pathname === "/" ? css.active : css.navigationItem}>
+            <Link href="/">Home</Link>
+          </li>
+          <li
+            className={
+              pathname === "/catalog" ? css.active : css.navigationItem
+            }
+          >
+            <Link href="/catalog">Catalog</Link>
+          </li>
+        </ul>
 
-          {/* Desktop favorites */}
-          {/* <div>
+        {/* Desktop favorites */}
+        {/* <div>
             <Button />
           </div> */}
 
-          {/* Mobile menu button */}
-          {/* <div>
+        {/* Mobile menu button */}
+        {/* <div>
             <Menu />
           </div> */}
-        </div>
       </header>
     </div>
   );
