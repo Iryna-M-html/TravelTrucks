@@ -56,7 +56,7 @@
 .checkboxList {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px; /* Расстояние 14px из Spacing на скриншоте 2 */
+  gap: 8px;
   list-style: none;
   padding: 0;
 }
@@ -87,7 +87,6 @@
   text-align: center;
 }
 
-/* Эффект при выборе (как на скриншоте у AC) */
 .hiddenInput:checked + .filterCard {
   border-color: #e44848;
 }
