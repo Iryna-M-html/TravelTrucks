@@ -6,9 +6,10 @@ import { usePathname } from "next/navigation";
 
 export default function Header() {
   const pathname = usePathname();
+
   return (
-    <div className="container">
-      <header className={css.header}>
+    <header className={css.header}>
+      <div className={`container ${css.headerContent}`}>
         {/* Logo */}
         <Link href="/" className={css.logoLink}>
           <svg width={136} height={16}>
@@ -17,29 +18,21 @@ export default function Header() {
         </Link>
 
         {/* Desktop navigation */}
-        <ul className={css.navigation}>
-          <li className={pathname === "/" ? css.active : css.navigationItem}>
-            <Link href="/">Home</Link>
-          </li>
-          <li
-            className={
-              pathname === "/catalog" ? css.active : css.navigationItem
-            }
-          >
-            <Link href="/catalog">Catalog</Link>
-          </li>
-        </ul>
-
-        {/* Desktop favorites */}
-        {/* <div>
-            <Button />
-          </div> */}
-
-        {/* Mobile menu button */}
-        {/* <div>
-            <Menu />
-          </div> */}
-      </header>
-    </div>
+        <nav>
+          <ul className={css.navigation}>
+            <li className={pathname === "/" ? css.active : css.navigationItem}>
+              <Link href="/">Home</Link>
+            </li>
+            <li
+              className={
+                pathname === "/catalog" ? css.active : css.navigationItem
+              }
+            >
+              <Link href="/catalog">Catalog</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
   );
 }
