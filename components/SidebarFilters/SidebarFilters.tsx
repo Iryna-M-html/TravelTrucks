@@ -3,17 +3,21 @@ import css from "./SidebarFilters.module.css";
 const SidebarFilters = () => {
   // Список оборудования для фильтрации
   const equipment = [
-    { id: "AC", label: "AC", icon: "icon-hugeicons_gas-stove" },
+    { id: "AC", label: "AC", icon: "icon-ac" },
     { id: "transmission", label: "Automatic", icon: "icon-automatic" },
     { id: "kitchen", label: "Kitchen", icon: "icon-kitchen" },
     { id: "TV", label: "TV", icon: "icon-tv" },
-    { id: "bathroom", label: "Bathroom", icon: "icon-water-drop" },
+    { id: "bathroom", label: "Bathroom", icon: "icon-bathroom" },
   ];
 
   // Список типов техники
   const vehicleTypes = [
-    { id: "panelTruck", label: "Van", icon: "icon-van" },
-    { id: "fullyIntegrated", label: "Fully Integrated", icon: "icon-fully" },
+    { id: "panelTruck", label: "Van", icon: "icon-panelTruck" },
+    {
+      id: "fullyIntegrated",
+      label: "Fully Integrated",
+      icon: "icon-fullyIntegrated",
+    },
     { id: "alcove", label: "Alcove", icon: "icon-alcove" },
   ];
 

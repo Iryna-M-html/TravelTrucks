@@ -13,7 +13,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className={css.logoLink}>
           <svg width={136} height={16}>
-            <use href="/img/icons.svg#icon-Logo"></use>
+            <use href="/img/icons.svg#icon-logo"></use>
           </svg>
         </Link>
 
