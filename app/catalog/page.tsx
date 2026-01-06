@@ -4,6 +4,7 @@ import CampersList from "@/components/CatalogcampersList/CatalogcampersList";
 import type { Camper } from "@/types/camper";
 import { fetchCampers } from "@/lib/api/clientApi";
 import { useEffect, useState } from "react";
+import SidebarFilters from "@/components/SidebarFilters/SidebarFilters";
 
 export default function CatalogPage() {
   const [campers, setCampers] = useState<Camper[]>([]);
@@ -29,7 +30,14 @@ export default function CatalogPage() {
 
   return (
     <main>
-      <CampersList campers={campers} />
+      <div className="container">
+        <div className="layoutWrapper">
+          <SidebarFilters />
+          <div className="listContainer">
+            <CampersList campers={campers} />
+          </div>
+        </div>
+      </div>
     </main>
   );
 }

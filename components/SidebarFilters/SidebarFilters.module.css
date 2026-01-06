@@ -1,23 +1,111 @@
-.menuList {
-  list-style-type: none;
-  margin: 0;
+.sidebar {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.label {
+  display: block;
+  color: rgba(16, 24, 40, 0.6);
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: #101828;
+}
+
+.locationInput {
+  width: 100%;
+  padding: 18px 18px 18px 48px;
+  background-color: #f7f7f7;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  outline: none;
+}
+
+.filtersTitle {
+  color: #475467;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+.groupTitle {
+  font-weight: 600;
+  font-size: 20px;
+  color: #101828;
+  margin-bottom: 24px;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid rgba(16, 24, 40, 0.1);
+  margin-bottom: 24px;
+}
+
+.checkboxList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px; /* Расстояние 14px из Spacing на скриншоте 2 */
+  list-style: none;
   padding: 0;
 }
 
-.menuItem {
-  margin-bottom: 16px;
+.hiddenInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
 }
 
-.menuLink {
-  text-decoration: none;
-  color: white;
+.filterCard {
+  width: 112px;
+  height: 96px;
+  border: 1px solid rgba(16, 24, 40, 0.1);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  font-weight: 500;
   font-size: 16px;
-  display: block;
-  padding: 8px 16px;
+  text-align: center;
+}
+
+/* Эффект при выборе (как на скриншоте у AC) */
+.hiddenInput:checked + .filterCard {
+  border-color: #e44848;
+}
+
+.searchButton {
+  margin-top: 32px;
+  padding: 16px 60px;
+  background-color: #e44848;
+  color: white;
+  border: none;
+  border-radius: 200px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  width: fit-content;
   transition: background-color 0.3s ease;
 }
 
-.menuLink:hover {
-  background-color: #444;
-  color: #ddd;
+.searchButton:hover {
+  background-color: #d84343;
 }
