@@ -1,5 +1,4 @@
-import { tags } from "@/constans/tags";
-import css from "./SidebarNotes.module.css";
+import css from "./SidebarFilters.module.css";
 import Link from "next/link";
 
 const SidebarNotes = () => {
