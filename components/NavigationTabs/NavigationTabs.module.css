@@ -1,0 +1,20 @@
+.tabsContainer {
+  display: flex;
+  gap: 40px;
+  border-bottom: 1px solid var(--badges); /* Світло-сіра лінія */
+  margin-bottom: 44px;
+}
+
+.tab {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  padding-bottom: 24px;
+  cursor: pointer;
+  border-bottom: 5px solid transparent; /* Прозора лінія за замовчуванням */
+  transition: all 0.3s ease;
+}
+
+.activeTab {
+  border-bottom-color: #e44848; /* Червона лінія для активного стану */
+}

@@ -1,6 +1,7 @@
 import { fetchCamperById } from "@/lib/api/clientApi";
 import css from "./camperid.module.css";
 import Image from "next/image";
+import NavigationTabs from "@/components/NavigationTabs/NavigationTabs";
 
 export default async function CamperDetailsPage({
   params,
@@ -10,7 +11,7 @@ export default async function CamperDetailsPage({
   const camper = await fetchCamperById(params.id);
 
   return (
-    <div>
+    <div className="container">
       <h1>{camper.name}</h1>
       <div className={css.meta}>
         <span className={css.rating}>⭐{camper.rating} </span>
@@ -32,6 +33,7 @@ export default async function CamperDetailsPage({
       </ul>
 
       <p className={css.description}>{camper.description}</p>
+      <NavigationTabs />
     </div>
   );
 }
