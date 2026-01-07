@@ -26,14 +26,14 @@ export const fetchCampers = async ({
   }
 
   const res = await nextServerApi.get("/campers", { params });
-  console.log("Данные из API:", res.data);
+
   return res.data.items;
 };
 
-// export const fetchNoteById = async (id: string): Promise<Note> => {
-//   if (!id) {
-//     throw new Error("Note ID is required");
-//   }
-//   const response = await nextServerApi.get<Note>(`/notes/${id}`);
-//   return response.data;
-// };
+export const fetchCamperById = async (id: string): Promise<Camper> => {
+  if (!id) {
+    throw new Error("Camper ID is required");
+  }
+  const response = await nextServerApi.get<Camper>(`/campers/${id}`);
+  return response.data;
+};

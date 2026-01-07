@@ -55,12 +55,12 @@ const CampersList = ({ campers }: CampersListProps) => {
                 {AC && <li>AC</li>}
               </ul>
 
-              {/* <Link href={`/catalog/${camper.id}`} className={css.detailLink}>
+              <Link href={`/catalog/${id}`} className={css.detailLink}>
                 <ShowmoreButton
                   handleButtonClick={() => {}}
                   textBtn="Show more"
                 />
-              </Link> */}
+              </Link>
             </div>
           </li>
         )
