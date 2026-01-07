@@ -3,18 +3,21 @@
 import { useState } from "react";
 import css from "./NavigationTabs.module.css";
 import type { Camper } from "../../types/camper";
-// Імпортуйте ваші компоненти контенту
+
 // import Features from "../Features/Features";
-// import Reviews from "../Reviews/Reviews";
+import Reviews from "../Reviews/Reviews";
 
 interface CamperTabsProps {
-  campers: Camper[];
+  camper: Camper | null;
 }
 
 const NavigationTabs = ({ camper }: CamperTabsProps) => {
   const [activeTab, setActiveTab] = useState<"features" | "reviews">(
     "features"
   );
+  if (!camper) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className={css.container}>
@@ -42,7 +45,7 @@ const NavigationTabs = ({ camper }: CamperTabsProps) => {
           <div>{/* <Features camper={camper} /> */} Контент Features</div>
         ) : (
           <div>
-            {/* <Reviews reviews={camper.reviews} /> */} Контент Reviews
+            <Reviews reviews={camper.reviews} />
           </div>
         )}
       </div>

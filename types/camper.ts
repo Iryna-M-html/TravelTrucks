@@ -14,6 +14,11 @@ export interface Camper {
   kitchen: boolean;
   TV: boolean;
   gallery: CamperGallery[];
+  reviews: {
+    reviewer_name: string;
+    reviewer_rating: number;
+    comment: string;
+  }[];
 }
 export interface CamperGallery {
   thumb: string;

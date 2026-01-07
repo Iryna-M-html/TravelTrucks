@@ -33,7 +33,7 @@ export default async function CamperDetailsPage({
       </ul>
 
       <p className={css.description}>{camper.description}</p>
-      <NavigationTabs />
+      <NavigationTabs camper={camper} />
     </div>
   );
 }
