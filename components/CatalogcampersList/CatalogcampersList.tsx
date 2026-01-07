@@ -1,9 +1,11 @@
 "use client";
+import Link from "next/link";
 import type { Camper } from "../../types/camper";
 
 import css from "./CatalogcampersList.module.css";
 
 import Image from "next/image";
+import ShowmoreButton from "../ShowmoreButton/ShowmoreButton";
 
 interface CampersListProps {
   campers: Camper[];
@@ -31,6 +33,7 @@ const CampersList = ({ campers }: CampersListProps) => {
               alt={name}
               width={292}
               height={320}
+              className={css.image}
             />
 
             <div className={css.content}>
@@ -52,7 +55,12 @@ const CampersList = ({ campers }: CampersListProps) => {
                 {AC && <li>AC</li>}
               </ul>
 
-              <button className={css.button}>Show more</button>
+              {/* <Link href={`/catalog/${camper.id}`} className={css.detailLink}>
+                <ShowmoreButton
+                  handleButtonClick={() => {}}
+                  textBtn="Show more"
+                />
+              </Link> */}
             </div>
           </li>
         )
