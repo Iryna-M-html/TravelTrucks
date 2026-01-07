@@ -4,7 +4,7 @@ import { useState } from "react";
 import css from "./NavigationTabs.module.css";
 import type { Camper } from "../../types/camper";
 
-// import Features from "../Features/Features";
+import Features from "../Features/Features";
 import Reviews from "../Reviews/Reviews";
 
 interface CamperTabsProps {
@@ -42,7 +42,9 @@ const NavigationTabs = ({ camper }: CamperTabsProps) => {
       {/* Контент вкладок */}
       <div className={css.content}>
         {activeTab === "features" ? (
-          <div>{/* <Features camper={camper} /> */} Контент Features</div>
+          <div>
+            <Features camper={camper} />{" "}
+          </div>
         ) : (
           <div>
             <Reviews reviews={camper.reviews} />

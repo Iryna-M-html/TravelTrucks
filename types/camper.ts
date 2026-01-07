@@ -1,5 +1,6 @@
 export type EquipmentKey = "AC" | "automatic" | "kitchen" | "TV" | "bathroom";
-
+export type FormType = "panelTruck" | "alcove" | "fullyIntegrated";
+export type TransmissionType = "manual" | "automatic";
 export interface Camper {
   id: string;
   name: string;
@@ -7,7 +8,7 @@ export interface Camper {
   rating: number;
   location: string;
   description: string;
-  transmission: string; //automatic
+  transmission: TransmissionType;
   engine: string;
   AC: boolean;
   bathroom: boolean;
@@ -19,6 +20,12 @@ export interface Camper {
     reviewer_rating: number;
     comment: string;
   }[];
+  form: FormType;
+  length: string;
+  width: string;
+  height: string;
+  tank: string;
+  consumption: string;
 }
 export interface CamperGallery {
   thumb: string;
