@@ -2,6 +2,7 @@ import { fetchCamperById } from "@/lib/api/clientApi";
 import css from "./camperid.module.css";
 import Image from "next/image";
 import NavigationTabs from "@/components/NavigationTabs/NavigationTabs";
+import BookingForm from "@/components/BookingForm/BookingForm";
 
 export default async function CamperDetailsPage({
   params,
@@ -31,9 +32,11 @@ export default async function CamperDetailsPage({
           </li>
         ))}
       </ul>
-
       <p className={css.description}>{camper.description}</p>
-      <NavigationTabs camper={camper} />
+      <div className={css.content}>
+        <NavigationTabs camper={camper} />
+        <BookingForm />
+      </div>
     </div>
   );
 }
