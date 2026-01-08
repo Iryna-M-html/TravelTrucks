@@ -51,16 +51,21 @@ export const EquipmentIcons: Record<EquipmentOption, string> = {
 export interface EquipmentOptionRecord {
   option: EquipmentOption;
   icon: string;
+  label: string;
 }
 export const EQUIPMENT: EquipmentOptionRecord[] = [
-  { option: "AC", icon: EquipmentIcons.AC },
-  { option: "bathroom", icon: EquipmentIcons.bathroom },
-  { option: "kitchen", icon: EquipmentIcons.kitchen },
-  { option: "TV", icon: EquipmentIcons.TV },
-  { option: "radio", icon: EquipmentIcons.radio },
-  { option: "refrigerator", icon: EquipmentIcons.refrigerator },
-  { option: "microwave", icon: EquipmentIcons.microwave },
-  { option: "gas", icon: EquipmentIcons.gas },
-  { option: "water", icon: EquipmentIcons.water },
-  { option: "automatic", icon: EquipmentIcons.automatic },
+  { option: "AC", icon: EquipmentIcons.AC, label: "AC" },
+  { option: "bathroom", icon: EquipmentIcons.bathroom, label: "Bathroom" },
+  { option: "kitchen", icon: EquipmentIcons.kitchen, label: "Kitchen" },
+  { option: "TV", icon: EquipmentIcons.TV, label: "TV" },
+  { option: "radio", icon: EquipmentIcons.radio, label: "Radio" },
+  {
+    option: "refrigerator",
+    icon: EquipmentIcons.refrigerator,
+    label: "Refrigerator",
+  },
+  { option: "microwave", icon: EquipmentIcons.microwave, label: "Microwave" },
+  { option: "gas", icon: EquipmentIcons.gas, label: "Gas" },
+  { option: "water", icon: EquipmentIcons.water, label: "Water" },
+  { option: "automatic", icon: EquipmentIcons.automatic, label: "Automatic" },
 ];

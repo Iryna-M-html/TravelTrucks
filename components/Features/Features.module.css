@@ -1,92 +1,70 @@
 .container {
-  max-width: 631px;
   padding: 44px 52px;
-  background-color: var(--inputs);
+  background-color: #f7f7f7;
   border-radius: 10px;
-}
-
-@media (min-width: 1024px) {
-  .container {
-    width: 631px;
-    height: 588px;
-    padding: 44px 52px;
-  }
 }
 
 .featuresRow {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 90px;
-  overflow: hidden;
-}
-
-@media (min-width: 1024px) {
-  .featuresRow {
-    max-height: 104px;
-  }
-}
-
-.featuresColumn {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  margin-bottom: 44px;
+  list-style: none;
+  padding: 0;
 }
 
 .feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  background-color: #f2f4f7;
+  border-radius: 100px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  border-radius: 100px;
-  padding: 12px 18px;
-  max-width: 143px;
-  height: 48px;
-  background-color: var(--badges);
-  mix-blend-mode: multiply;
-  display: flex;
-  gap: 8px;
-  align-items: center;
+  color: #101828;
   text-transform: capitalize;
 }
 
 .featureIcon {
   width: 20px;
   height: 20px;
-  stroke: var(--badges);
-  fill: var(--main);
-}
-
-.iconRef {
-  transform: scale(3);
-  transform-origin: center;
+  fill: #101828;
 }
 
 .title {
   font-weight: 600;
   font-size: 20px;
   line-height: 1.2;
+  color: #101828;
+  margin-bottom: 24px;
 }
 
 .separator {
-  width: 100%;
+  border: none;
   height: 1px;
-  background-color: var(--gray-light);
-  margin: 24px 0;
+  background-color: rgba(16, 24, 40, 0.1);
+  margin-bottom: 24px;
 }
 
-.detailRow {
+.detailList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+  padding: 0;
+}
+
+.detailItem {
   display: flex;
   justify-content: space-between;
-}
-
-.detailText {
-  text-transform: capitalize;
   font-weight: 500;
-  font-size: 16px;
-  line-height: normal;
-  color: inherit;
+  font-size: 18px;
+  line-height: 1.33;
+  color: #101828;
 }
 
-.detailList > * + * {
-  margin-top: 16px;
+.detailValue {
+  text-transform: capitalize;
 }

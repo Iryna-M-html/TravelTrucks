@@ -9,61 +9,60 @@ type FeaturesProp = {
 export default function Features({ camper }: FeaturesProp) {
   if (!camper) return null;
 
-  const camperFeatures: Record<string, string> = {
-    form: camper.form,
-    length: camper.length,
-    width: camper.width,
-    height: camper.height,
-    tank: camper.tank,
-    consumption: camper.consumption,
-  };
+  const detailsMap = [
+    { key: "Form", value: camper.form },
+    { key: "Length", value: camper.length },
+    { key: "Width", value: camper.width },
+    { key: "Height", value: camper.height },
+    { key: "Tank", value: camper.tank },
+    { key: "Consumption", value: camper.consumption },
+  ];
 
   return (
     <div className={css.container}>
       <ul className={css.featuresRow}>
-        {camper.transmission && camper.transmission === "automatic" && (
-          <li className={css.feature}>
-            <svg className={css.featureIcon} vectorEffect="non-scaling-stroke">
-              <use href={`/icons.svg#icon-${camper.transmission}`}></use>
-            </svg>
-            {camper.transmission}
-          </li>
-        )}
-        {camper.engine && (
-          <li className={css.feature}>
-            <svg className={css.featureIcon} vectorEffect="non-scaling-stroke">
-              <use href={`/icons.svg#icon-${camper.engine}`}></use>
-            </svg>
-            {camper.engine}
-          </li>
-        )}
+        <li className={css.feature}>
+          <svg className={css.featureIcon}>
+            <use href="/img/icons.svg#icon-automatic"></use>
+          </svg>
+          <span>{camper.transmission}</span>
+        </li>
 
-        {EQUIPMENT.filter((el) => el.option !== "automatic").map(
-          (equipment) =>
-            camper[equipment.option as keyof Camper] && (
-              <li key={equipment.option} className={css.feature}>
-                <svg
-                  className={`${css.featureIcon} ${
-                    equipment.option === "refrigerator" ? css.iconRef : ""
-                  }`}
-                  vectorEffect="non-scaling-stroke"
-                >
-                  <use href={`/icons.svg#${equipment.icon}`}></use>
+        <li className={css.feature}>
+          <svg className={css.featureIcon}>
+            <use href={`/img/icons.svg#icon-${camper.engine}`}></use>
+          </svg>
+          <span>{camper.engine}</span>
+        </li>
+
+        {/* 3. Обладнання (якщо true) */}
+        {EQUIPMENT.map((item) => {
+          if (
+            item.option !== "automatic" &&
+            camper[item.option as keyof Camper]
+          ) {
+            return (
+              <li key={item.option} className={css.feature}>
+                <svg className={css.featureIcon}>
+                  <use href={`/img/icons.svg#${item.icon}`}></use>
                 </svg>
-                {equipment.option}
+                <span>{item.label}</span>
               </li>
-            )
-        )}
+            );
+          }
+          return null;
+        })}
       </ul>
 
-      <div>
+      {/* Секція детальної інформації */}
+      <div className={css.detailsWrapper}>
         <h3 className={css.title}>Vehicle details</h3>
-        <div className={css.separator}></div>
+        <hr className={css.separator} />
         <ul className={css.detailList}>
-          {Object.entries(camperFeatures).map(([key, value]) => (
-            <li key={key} className={css.detailRow}>
-              <span className={css.detailText}>{key}</span>
-              <span className={css.detailText}>{value}</span>
+          {detailsMap.map(({ key, value }) => (
+            <li key={key} className={css.detailItem}>
+              <span>{key}</span>
+              <span className={css.detailValue}>{value}</span>
             </li>
           ))}
         </ul>
