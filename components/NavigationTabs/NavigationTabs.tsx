@@ -6,6 +6,7 @@ import type { Camper } from "../../types/camper";
 
 import Features from "../Features/Features";
 import Reviews from "../Reviews/Reviews";
+import BookingForm from "../BookingForm/BookingForm";
 
 interface CamperTabsProps {
   camper: Camper | null;
@@ -40,16 +41,19 @@ const NavigationTabs = ({ camper }: CamperTabsProps) => {
       </div>
 
       {/* Контент вкладок */}
-      <div className={css.content}>
-        {activeTab === "features" ? (
-          <div>
-            <Features camper={camper} />{" "}
-          </div>
-        ) : (
-          <div>
-            <Reviews reviews={camper.reviews} />
-          </div>
-        )}
+      <div className={css.conteinerTabsBooking}>
+        <div className={css.content}>
+          {activeTab === "features" ? (
+            <div>
+              <Features camper={camper} />{" "}
+            </div>
+          ) : (
+            <div>
+              <Reviews reviews={camper.reviews} />
+            </div>
+          )}
+        </div>
+        <BookingForm />
       </div>
     </div>
   );
