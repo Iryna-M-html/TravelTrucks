@@ -46,7 +46,7 @@ const SidebarFilters = () => {
         <hr className={css.divider} />
         <ul className={css.checkboxList}>
           {equipment.map((item) => (
-            <li key={item.id}>
+            <li key={item.id} className={css.listItem}>
               <label className={css.filterItem}>
                 <input
                   type="checkbox"
@@ -72,7 +72,7 @@ const SidebarFilters = () => {
         <hr className={css.divider} />
         <ul className={css.checkboxList}>
           {vehicleTypes.map((type) => (
-            <li key={type.id}>
+            <li key={type.id} className={css.listItem}>
               <label className={css.filterItem}>
                 <input
                   type="radio"

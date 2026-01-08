@@ -9,8 +9,8 @@ export interface FetchCampersResponse {
 }
 
 export const fetchCampers = async ({
-  page = 1,
-  limit = 4,
+  page,
+  limit,
   filters,
 }: FetchCampersParams = {}): Promise<Camper[]> => {
   const params: CamperQueryParams = { page, limit };

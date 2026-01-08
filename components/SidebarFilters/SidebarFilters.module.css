@@ -1,14 +1,18 @@
 .sidebar {
-  width: 360px;
+  width: 360px; /* */
   display: flex;
   flex-direction: column;
-  gap: 32px;
+}
+
+.locationGroup {
+  margin-bottom: 32px;
 }
 
 .label {
   display: block;
   color: rgba(16, 24, 40, 0.6);
   font-size: 16px;
+  font-weight: 500;
   margin-bottom: 8px;
 }
 
@@ -21,7 +25,9 @@
   left: 18px;
   top: 50%;
   transform: translateY(-50%);
-  fill: #101828;
+  fill: none;
+  stroke: #101828;
+  pointer-events: none;
 }
 
 .locationInput {
@@ -31,18 +37,25 @@
   border: none;
   border-radius: 12px;
   font-size: 16px;
+  color: #101828;
   outline: none;
 }
 
 .filtersTitle {
   color: #475467;
   font-weight: 500;
+  font-size: 16px;
   margin-bottom: 14px;
+}
+
+.filterGroup {
+  margin-bottom: 32px;
 }
 
 .groupTitle {
   font-weight: 600;
   font-size: 20px;
+  line-height: 1.2;
   color: #101828;
   margin-bottom: 24px;
 }
@@ -51,14 +64,27 @@
   border: none;
   border-top: 1px solid rgba(16, 24, 40, 0.1);
   margin-bottom: 24px;
+  width: 100%;
 }
 
 .checkboxList {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 12px 10px; /* Вертикальний 12px, горизонтальний 10px */
   list-style: none;
   padding: 0;
+  margin: 0;
+}
+
+/* Формула для трьох іконок в ряд */
+.listItem {
+  flex-basis: calc((100% - 20px) / 3);
+}
+
+.filterItem {
+  cursor: pointer;
+  display: block;
+  width: 100%;
 }
 
 .hiddenInput {
@@ -71,37 +97,49 @@
 }
 
 .filterCard {
-  width: 112px;
-  height: 96px;
-  border: 1px solid rgba(16, 24, 40, 0.1);
+  width: 100%;
+  height: 95px;
+  border: 1px solid rgba(16, 24, 40, 0.2);
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  cursor: pointer;
-  transition: border-color 0.3s ease;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.filterCard span {
   font-weight: 500;
   font-size: 16px;
-  text-align: center;
+  color: #101828;
+}
+
+.filterCard svg {
+  fill: #101828;
+}
+
+/* Стан при наведенні та виборі */
+.filterCard:hover {
+  border-color: #e44848;
 }
 
 .hiddenInput:checked + .filterCard {
-  border-color: #e44848;
+  border: 1px solid #e44848; /* */
 }
 
 .searchButton {
   margin-top: 32px;
-  padding: 16px 60px;
+  width: 173px; /* */
+  height: 56px; /* */
+  padding: 16px 32px;
   background-color: #e44848;
   color: white;
   border: none;
-  border-radius: 200px;
+  border-radius: 200px; /* */
   font-weight: 500;
   font-size: 16px;
   cursor: pointer;
-  width: fit-content;
   transition: background-color 0.3s ease;
 }
 
