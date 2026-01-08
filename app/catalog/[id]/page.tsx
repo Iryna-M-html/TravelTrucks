@@ -6,9 +6,10 @@ import NavigationTabs from "@/components/NavigationTabs/NavigationTabs";
 export default async function CamperDetailsPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const camper = await fetchCamperById(params.id);
+  const { id } = await params;
+  const camper = await fetchCamperById(id);
 
   return (
     <div className="container">
