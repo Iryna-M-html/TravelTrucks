@@ -38,7 +38,7 @@
 .galleryItem {
   flex-shrink: 0;
   width: 292px;
-  height: 310px;
+  height: 312px;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -61,4 +61,11 @@
 }
 .content {
   margin-top: 60px;
+}
+.description {
+  margin-top: 28px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #475467;
 }

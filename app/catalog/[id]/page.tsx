@@ -32,6 +32,7 @@ export default async function CamperDetailsPage({
         ))}
       </ul>
       <p className={css.description}>{camper.description}</p>
+
       <div className={css.content}>
         <NavigationTabs camper={camper} />
       </div>
