@@ -18,8 +18,13 @@ const CampersList = ({ campers }: CampersListProps) => {
   };
 
   const visibleCampers = campers.slice(0, visibleCount);
-
   const isFinished = visibleCount >= campers.length;
+
+  const formLabels: Record<string, string> = {
+    panelTruck: "Van",
+    fullyIntegrated: "Fully Integrated",
+    alcove: "Alcove",
+  };
 
   return (
     <div className={css.container}>
@@ -35,34 +40,109 @@ const CampersList = ({ campers }: CampersListProps) => {
             transmission,
             engine,
             AC,
+            kitchen,
+            TV,
+            bathroom,
             gallery,
+            form,
           }) => (
             <li key={id} className={css.card}>
-              <Image
-                src={gallery[0]?.thumb || "/placeholder.jpg"}
-                alt={name}
-                width={292}
-                height={320}
-                className={css.image}
-              />
+              <div className={css.imageWrapper}>
+                <Image
+                  src={gallery[0]?.thumb || "/placeholder.jpg"}
+                  alt={name}
+                  fill
+                  className={css.image}
+                  sizes="(max-width: 768px) 100vw, 290px"
+                />
+              </div>
 
               <div className={css.content}>
                 <div className={css.header}>
                   <h2 className={css.name}>{name}</h2>
-                  <span className={css.price}>€{price}.00</span>
+                  <div className={css.priceWrapper}>
+                    <span className={css.price}>€{price}.00</span>
+                    <button
+                      className={css.heartBtn}
+                      aria-label="Add to favorites"
+                    >
+                      <svg width="24" height="24" className={css.heartIcon}>
+                        <use href="/img/icons.svg#icon-heart"></use>
+                      </svg>
+                    </button>
+                  </div>
                 </div>
 
                 <div className={css.meta}>
-                  <span className={css.rating}>⭐ {rating}</span>
-                  <span className={css.location}>{location}</span>
+                  <span className={css.rating}>⭐ {rating} (Reviews)</span>
+                  <span className={css.location}>
+                    <svg width="16" height="16" className={css.metaIcon}>
+                      <use href="/img/icons.svg#icon-map"></use>
+                    </svg>
+                    {location}
+                  </span>
                 </div>
 
                 <p className={css.description}>{description}</p>
 
                 <ul className={css.features}>
-                  <li>{transmission}</li>
-                  <li>{engine}</li>
-                  {AC && <li>AC</li>}
+                  {/* Тип техніки (Vehicle Type) */}
+                  <li className={css.featureItem}>
+                    <svg width="20" height="20">
+                      <use href={`/img/icons.svg#icon-${form}`}></use>
+                    </svg>
+                    <span>{formLabels[form] || form}</span>
+                  </li>
+
+                  {/* Трансмісія */}
+                  <li className={css.featureItem}>
+                    <svg width="20" height="20">
+                      <use href="/img/icons.svg#icon-automatic"></use>
+                    </svg>
+                    <span>{transmission}</span>
+                  </li>
+
+                  {/* Двигун */}
+                  <li className={css.featureItem}>
+                    <svg width="20" height="20">
+                      <use href="/img/icons.svg#icon-petrol"></use>
+                    </svg>
+                    <span>{engine}</span>
+                  </li>
+
+                  {/* Зручності */}
+                  {kitchen && (
+                    <li className={css.featureItem}>
+                      <svg width="20" height="20">
+                        <use href="/img/icons.svg#icon-kitchen"></use>
+                      </svg>
+                      <span>Kitchen</span>
+                    </li>
+                  )}
+                  {AC && (
+                    <li className={css.featureItem}>
+                      <svg width="20" height="20">
+                        <use href="/img/icons.svg#icon-ac"></use>
+                      </svg>
+                      <span>AC</span>
+                    </li>
+                  )}
+                  {TV && (
+                    <li className={css.featureItem}>
+                      <svg width="20" height="20">
+                        <use href="/img/icons.svg#icon-tv"></use>
+                      </svg>
+                      <span>TV</span>
+                    </li>
+                  )}
+                  {bathroom && (
+                    <li className={css.featureItem}>
+                      <svg width="20" height="20">
+                        <use href="/img/icons.svg#icon-bathroom"></use>
+                      </svg>
+                      <span>Bathroom</span>
+                    </li>
+                  )}
                 </ul>
 
                 <Link href={`/catalog/${id}`} className={css.detailLink}>
