@@ -158,3 +158,20 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: underline;
+}
+
+.starIcon {
+  fill: var(--rating, #ffc531);
+  flex-shrink: 0;
+}
+
+.metaIcon {
+  fill: none;
+  stroke: #101828;
+  flex-shrink: 0;
+}

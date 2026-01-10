@@ -5,6 +5,7 @@ import type { Camper } from "../../types/camper";
 import css from "./CatalogcampersList.module.css";
 import Image from "next/image";
 import ShowmoreButton from "../ShowmoreButton/ShowmoreButton";
+import { AiFillStar } from "react-icons/ai";
 
 interface CampersListProps {
   campers: Camper[];
@@ -74,7 +75,14 @@ const CampersList = ({ campers }: CampersListProps) => {
                 </div>
 
                 <div className={css.meta}>
-                  <span className={css.rating}>⭐ {rating} (Reviews)</span>
+                  <span className={css.rating}>
+                    <AiFillStar
+                      size={16}
+                      color="#ffc531"
+                      style={{ flexShrink: 0 }}
+                    />
+                    {rating} (Reviews)
+                  </span>
                   <span className={css.location}>
                     <svg width="16" height="16" className={css.metaIcon}>
                       <use href="/img/icons.svg#icon-map"></use>

@@ -30,7 +30,6 @@ export default function Reviews({ reviews }: ReviewsProp) {
                     <AiFillStar
                       key={i}
                       size={16}
-                      // Логіка фарбування зірок
                       color={i < review.reviewer_rating ? "#ffc531" : "#f2f4f7"}
                     />
                   ))}
