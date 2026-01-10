@@ -4,11 +4,12 @@
 }
 
 .input {
-  border-radius: 1rem;
-  border: none;
-  padding: 18px;
   width: 100%;
-  height: 60px;
+  height: 24px;
+  border: none;
+  padding: 18px 0px;
+  padding-left: 18px;
+  border-radius: 16px;
   background-color: var(--inputs);
   cursor: pointer;
   outline: none;

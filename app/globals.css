@@ -24,7 +24,7 @@ body {
   padding: 0 64px;
   margin: 0 auto;
   width: 100%;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 }
 
 a {
