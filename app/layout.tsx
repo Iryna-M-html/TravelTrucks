@@ -13,31 +13,30 @@ export const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "NoteHub — Create and manage your notes easily",
+  title: "TravelTrucks — Find your perfect camper for adventure",
   description:
-    "NoteHub is a simple and fast way to create, organize and manage your notes with tags.",
+    "TravelTrucks is a simple and fast way to find, filter and book campers and motorhomes for your next trip.",
   openGraph: {
-    title: "NoteHub — Create and manage your notes easily",
+    title: "TravelTrucks — Find your perfect camper for adventure",
     description:
-      "NoteHub is a simple and fast way to create, organize and manage your notes with tags.",
-    url: "https://notehub.example.com",
+      "TravelTrucks is a simple and fast way to find, filter and book campers and motorhomes for your next trip.",
+    url: "https://travel-trucks.example.com",
     images: [
       {
         url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
-        width: 1200,
         height: 630,
-        alt: "NoteHub preview",
+        alt: "TravelTrucks preview",
       },
     ],
     type: "website",
     locale: "en_US",
-    siteName: "NoteHub",
+    siteName: "TravelTrucks",
   },
   twitter: {
     card: "summary_large_image",
-    title: "NoteHub — Create and manage your notes easily",
+    title: "TravelTrucks — Find your perfect camper for adventure",
     description:
-      "NoteHub is a simple and fast way to create, organize and manage your notes with tags.",
+      "TravelTrucks is a simple and fast way to find, filter and book campers and motorhomes for your next trip.",
     images: ["https://ac.goit.global/fullstack/react/notehub-og-meta.jpg"],
   },
 };

@@ -6,6 +6,7 @@ import { fetchCampers } from "@/lib/api/clientApi";
 import { useEffect, useState, useCallback } from "react";
 import SidebarFilters from "@/components/SidebarFilters/SidebarFilters";
 import { CamperFilters, FetchCampersParams } from "@/types/filters";
+import css from "./CatalogPage.module.css";
 
 export default function CatalogPage() {
   const [campers, setCampers] = useState<Camper[]>([]);
@@ -25,6 +26,7 @@ export default function CatalogPage() {
         setCampers(data);
       } catch (error) {
         console.error("Failed to fetch campers", error);
+        setCampers([]);
       } finally {
         setLoading(false);
       }
@@ -84,7 +86,20 @@ export default function CatalogPage() {
             onSearch={handleSearch}
           />
           <div className="listContainer">
-            {loading ? <p>Loading...</p> : <CampersList campers={campers} />}
+            {loading ? (
+              <p className={css.statusMessage}>Loading...</p>
+            ) : campers.length > 0 ? (
+              <CampersList campers={campers} />
+            ) : (
+              <div className={css.noResults}>
+                <p className={css.noResultsText}>
+                  No campers found in this location or with these filters.
+                </p>
+                <p className={css.noResultsSubtext}>
+                  Try adjusting your search criteria.
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { fetchCamperById } from "@/lib/api/clientApi";
-import css from "./camperid.module.css";
+import css from "./Camperid.module.css";
 import Image from "next/image";
 import NavigationTabs from "@/components/NavigationTabs/NavigationTabs";
 

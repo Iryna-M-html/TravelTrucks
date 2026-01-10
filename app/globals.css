@@ -32,14 +32,9 @@ a {
   gap: 64px;
   padding-top: 48px;
   padding-bottom: 52px;
-  /* padding-left: 64px; */
   align-items: flex-start;
 }
 
-/* Контейнер для списка, чтобы он рос в ширину */
-.listContainer {
+/* .listContainer {
   flex-grow: 1;
-}
-
-/* Ограничиваем ширину сайдбара, чтобы он не растягивался */
-/* SidebarFilters должен иметь внутри себя width: 360px */
+} */
