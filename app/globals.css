@@ -16,13 +16,15 @@ body {
   background: var(--white);
   color: var(--main);
   font-family: var(--font-family);
+  margin: 0;
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 1312;
   padding: 0 64px;
   margin: 0 auto;
   width: 100%;
+  outline: 1px solid red;
 }
 
 a {
