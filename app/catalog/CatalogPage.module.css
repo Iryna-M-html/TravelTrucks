@@ -22,6 +22,8 @@
   border: 1px dashed #dadde1;
   margin-top: 20px;
   text-align: center;
+  margin: 0 auto;
+  min-width: 800px;
 }
 
 .noResultsText {
