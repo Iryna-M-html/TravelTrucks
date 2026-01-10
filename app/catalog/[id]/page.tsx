@@ -2,6 +2,7 @@ import { fetchCamperById } from "@/lib/api/clientApi";
 import css from "./Camperid.module.css";
 import Image from "next/image";
 import NavigationTabs from "@/components/NavigationTabs/NavigationTabs";
+import { AiFillStar } from "react-icons/ai";
 
 export default async function CamperDetailsPage({
   params,
@@ -16,7 +17,9 @@ export default async function CamperDetailsPage({
       <section className={css.pageWrapper}>
         <h1 className="name">{camper.name}</h1>
         <div className={css.meta}>
-          <span className={css.rating}>⭐{camper.rating} </span>
+          <span className={css.rating}>
+            <AiFillStar size={16} color="#ffc531" style={{ flexShrink: 0 }} />
+          </span>
           <span className={css.location}>{camper.location}</span>
         </div>
         <span className={css.price}>€{camper.price}.00</span>
