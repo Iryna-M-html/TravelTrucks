@@ -1,7 +1,24 @@
 import css from "./SidebarFilters.module.css";
 
-const SidebarFilters = () => {
-  // Список оборудования для фильтрации
+interface SidebarFiltersProps {
+  location: string;
+  onLocationChange: (value: string) => void;
+  activeEquipment: string[];
+  activeType: string;
+  onEquipmentChange: (id: string) => void;
+  onTypeChange: (id: string) => void;
+  onSearch: () => void;
+}
+
+const SidebarFilters = ({
+  location,
+  onLocationChange,
+  activeEquipment,
+  activeType,
+  onEquipmentChange,
+  onTypeChange,
+  onSearch,
+}: SidebarFiltersProps) => {
   const equipment = [
     { id: "AC", label: "AC", icon: "icon-ac" },
     { id: "transmission", label: "Automatic", icon: "icon-automatic" },
@@ -10,7 +27,6 @@ const SidebarFilters = () => {
     { id: "bathroom", label: "Bathroom", icon: "icon-bathroom" },
   ];
 
-  // Список типов техники
   const vehicleTypes = [
     { id: "panelTruck", label: "Van", icon: "icon-panelTruck" },
     {
@@ -23,7 +39,7 @@ const SidebarFilters = () => {
 
   return (
     <aside className={css.sidebar}>
-      {/* Локация */}
+      {/* Локація */}
       <div className={css.locationGroup}>
         <label className={css.label}>Location</label>
         <div className={css.inputWrapper}>
@@ -34,6 +50,8 @@ const SidebarFilters = () => {
             type="text"
             placeholder="Kyiv, Ukraine"
             className={css.locationInput}
+            value={location}
+            onChange={(e) => onLocationChange(e.target.value)}
           />
         </div>
       </div>
@@ -52,9 +70,14 @@ const SidebarFilters = () => {
                   type="checkbox"
                   name="equipment"
                   value={item.id}
+                  checked={activeEquipment.includes(item.id)}
+                  onChange={() => onEquipmentChange(item.id)}
                   className={css.hiddenInput}
                 />
-                <div className={css.filterCard}>
+
+                <div
+                  className={`${css.filterCard} ${activeEquipment.includes(item.id) ? css.active : ""}`}
+                >
                   <svg width="32" height="32">
                     <use href={`/img/icons.svg#${item.icon}`}></use>
                   </svg>
@@ -78,9 +101,14 @@ const SidebarFilters = () => {
                   type="radio"
                   name="vehicleType"
                   value={type.id}
+                  checked={activeType === type.id}
+                  onChange={() => onTypeChange(type.id)}
                   className={css.hiddenInput}
                 />
-                <div className={css.filterCard}>
+
+                <div
+                  className={`${css.filterCard} ${activeType === type.id ? css.active : ""}`}
+                >
                   <svg width="32" height="32">
                     <use href={`/img/icons.svg#${type.icon}`}></use>
                   </svg>
@@ -92,7 +120,7 @@ const SidebarFilters = () => {
         </ul>
       </div>
 
-      <button type="submit" className={css.searchButton}>
+      <button type="button" className={css.searchButton} onClick={onSearch}>
         Search
       </button>
     </aside>

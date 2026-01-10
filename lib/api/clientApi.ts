@@ -14,7 +14,7 @@ export const fetchCampers = async ({
   filters,
 }: FetchCampersParams = {}): Promise<Camper[]> => {
   const params: CamperQueryParams = { page, limit };
-
+  console.log("inside fetchCampers location is: " + filters?.location);
   if (filters?.location) params.location = filters.location;
   if (filters?.form) params.form = filters.form;
   if (filters?.transmission) params.transmission = filters.transmission;

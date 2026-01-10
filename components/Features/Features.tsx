@@ -21,6 +21,7 @@ export default function Features({ camper }: FeaturesProp) {
   return (
     <div className={css.container}>
       <ul className={css.featuresRow}>
+        {/* Трансмісія */}
         <li className={css.feature}>
           <svg className={css.featureIcon}>
             <use href="/img/icons.svg#icon-automatic"></use>
@@ -28,6 +29,7 @@ export default function Features({ camper }: FeaturesProp) {
           <span>{camper.transmission}</span>
         </li>
 
+        {/* Двигун */}
         <li className={css.feature}>
           <svg className={css.featureIcon}>
             <use href={`/img/icons.svg#icon-${camper.engine}`}></use>
@@ -35,7 +37,7 @@ export default function Features({ camper }: FeaturesProp) {
           <span>{camper.engine}</span>
         </li>
 
-        {/* 3. Обладнання (якщо true) */}
+        {/* Динамічне обладнання (включаючи Microwave, Gas, Water) */}
         {EQUIPMENT.map((item) => {
           if (
             item.option !== "automatic" &&
@@ -54,7 +56,6 @@ export default function Features({ camper }: FeaturesProp) {
         })}
       </ul>
 
-      {/* Секція детальної інформації */}
       <div className={css.detailsWrapper}>
         <h3 className={css.title}>Vehicle details</h3>
         <hr className={css.separator} />

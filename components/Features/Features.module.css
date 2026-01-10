@@ -68,3 +68,10 @@
 .detailValue {
   text-transform: capitalize;
 }
+.svg {
+  width: 32px;
+  height: 32px;
+  fill: #475467;
+  stroke: #475467;
+  color: #475467;
+}

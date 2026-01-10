@@ -1,11 +1,13 @@
-import { EquipmentKey } from "./camper";
+import { EquipmentKey, FormType } from "./camper";
+
 export interface CamperFilters {
   location?: string;
-  form?: CamperForm;
+  form?: FormType;
   equipment?: Exclude<EquipmentKey, "automatic">[];
   transmission?: "automatic";
 }
-export type CamperForm = "panelTruck" | "fullyIntegrated" | "alcove";
+
+// export type CamperForm = "panelTruck" | "fullyIntegrated" | "alcove";
 
 export interface FetchCampersParams {
   page?: number;
