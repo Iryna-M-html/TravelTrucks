@@ -22,6 +22,8 @@ export default function CatalogPage() {
         console.log(
           "location in  loadCampers is: " + searchParams.filters?.location
         );
+        searchParams.page = 1;
+        searchParams.limit = 2;
         const data = await fetchCampers(searchParams);
         setCampers(data);
       } catch (error) {
