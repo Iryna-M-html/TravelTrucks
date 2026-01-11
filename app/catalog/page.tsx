@@ -22,10 +22,8 @@ export default function CatalogPage() {
         console.log(
           "location in  loadCampers is: " + searchParams.filters?.location
         );
-        searchParams.page = 1;
-        searchParams.limit = 2;
         const data = await fetchCampers(searchParams);
-        setCampers(data);
+        setCampers(data.items);
       } catch (error) {
         console.error("Failed to fetch campers", error);
         setCampers([]);

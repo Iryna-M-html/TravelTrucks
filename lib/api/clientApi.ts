@@ -10,10 +10,10 @@ export interface FetchCampersResponse {
 
 /// НЕ УДАЛЯТЬ -- ЭТО ОРИГИНАЛ ДЛЯ АПИ
 export const fetchCampers = async ({
-  page,
-  limit,
+  page = 1,
+  limit = 4,
   filters,
-}: FetchCampersParams = {}): Promise<Camper[]> => {
+}: FetchCampersParams = {}): Promise<{ items: Camper[]; total: number }> => {
   const params: CamperQueryParams = { page, limit };
 
   if (filters?.location) params.location = filters.location;
@@ -28,7 +28,10 @@ export const fetchCampers = async ({
 
   const res = await nextServerApi.get("/campers", { params });
 
-  return res.data.items;
+  return {
+    items: res.data.items,
+    total: res.data.total,
+  };
 };
 // export const fetchCampers = async ({
 //   filters,
