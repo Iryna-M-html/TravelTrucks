@@ -11,14 +11,7 @@ export const metadata: Metadata = {
     description:
       "This page does not exist. Please check the URL or return to the TravelTrucks homepage.",
     url: "https://travel-trucks.example.com/404",
-    images: [
-      {
-        url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
-        width: 1200,
-        height: 630,
-        alt: "TravelTrucks 404 Page",
-      },
-    ],
+
     type: "website",
     siteName: "TravelTrucks",
   },

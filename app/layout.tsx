@@ -21,13 +21,7 @@ export const metadata: Metadata = {
     description:
       "TravelTrucks is a simple and fast way to find, filter and book campers and motorhomes for your next trip.",
     url: "https://travel-trucks.example.com",
-    images: [
-      {
-        url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
-        height: 630,
-        alt: "TravelTrucks preview",
-      },
-    ],
+
     type: "website",
     locale: "en_US",
     siteName: "TravelTrucks",
@@ -37,7 +31,6 @@ export const metadata: Metadata = {
     title: "TravelTrucks — Find your perfect camper for adventure",
     description:
       "TravelTrucks is a simple and fast way to find, filter and book campers and motorhomes for your next trip.",
-    images: ["https://ac.goit.global/fullstack/react/notehub-og-meta.jpg"],
   },
 };
 
