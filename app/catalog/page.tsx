@@ -5,7 +5,7 @@ import type { Camper, EquipmentKey, FormType } from "@/types/camper";
 import { fetchCampers } from "@/lib/api/clientApi";
 import { useEffect, useState, useCallback, useRef } from "react";
 import SidebarFilters from "@/components/SidebarFilters/SidebarFilters";
-import { CamperFilters, FetchCampersParams } from "@/types/filters";
+import { CamperFilters } from "@/types/filters";
 import css from "./CatalogPage.module.css";
 
 export default function CatalogPage() {
