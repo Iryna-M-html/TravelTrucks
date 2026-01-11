@@ -102,7 +102,14 @@ const SidebarFilters = ({
                   name="vehicleType"
                   value={type.id}
                   checked={activeType === type.id}
-                  onChange={() => onTypeChange(type.id)}
+                  onClick={() => {
+                    if (activeType === type.id) {
+                      onTypeChange(""); // reset if clicked on active
+                    } else {
+                      onTypeChange(type.id);
+                    }
+                  }}
+                  onChange={() => {}}
                   className={css.hiddenInput}
                 />
 
