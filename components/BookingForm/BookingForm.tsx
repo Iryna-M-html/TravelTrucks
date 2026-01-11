@@ -1,5 +1,5 @@
 "use client";
-import { Formik, Form, Field, FormikHelpers, ErrorMessage } from "formik";
+import { Formik, Form, Field, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -43,48 +43,65 @@ export default function BookingForm() {
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={onSubmit}
+        validateOnChange={true}
+        validateOnBlur={true}
       >
-        {({ setFieldValue, setFieldTouched, values, touched, errors }) => (
-          <Form className={css.form}>
-            <Field name="name" placeholder="Name*" className={css.input} />
-            <ErrorMessage name="name" component="div" className={css.error} />
+        {({ setFieldValue, setFieldTouched, values, touched, errors }) => {
+          const firstError =
+            touched.name && errors.name
+              ? "name"
+              : touched.email && errors.email
+                ? "email"
+                : touched.bookingDate && errors.bookingDate
+                  ? "bookingDate"
+                  : null;
 
-            <Field
-              name="email"
-              type="email"
-              placeholder="Email*"
-              className={css.input}
-            />
-            <ErrorMessage name="email" component="div" className={css.error} />
+          return (
+            <Form className={css.form}>
+              <Field name="name" placeholder="Name*" className={css.input} />
+              {firstError === "name" && (
+                <div className={css.error}>{errors.name}</div>
+              )}
 
-            <BookingDate
-              name="bookingDate"
-              value={values.bookingDate}
-              onChange={(date) => {
-                setFieldValue("bookingDate", date);
-              }}
-              onBlur={() => {
-                setTimeout(() => {
-                  setFieldTouched("bookingDate", true, true);
-                }, 0);
-              }}
-              touched={touched.bookingDate}
-              error={errors.bookingDate}
-            />
-            {touched.bookingDate && errors.bookingDate && (
-              <div className={css.error}>{errors.bookingDate}</div>
-            )}
+              <Field
+                name="email"
+                type="email"
+                placeholder="Email*"
+                className={css.input}
+              />
+              {firstError === "email" && (
+                <div className={css.error}>{errors.email}</div>
+              )}
 
-            <Field
-              name="comment"
-              as="textarea"
-              placeholder="Comment"
-              className={css.textarea}
-            />
+              <BookingDate
+                name="bookingDate"
+                value={values.bookingDate}
+                onChange={(date) => {
+                  setFieldValue("bookingDate", date);
+                }}
+                onBlur={() => {
+                  setTimeout(() => {
+                    setFieldTouched("bookingDate", true, true);
+                  }, 0);
+                }}
+                touched={touched.bookingDate}
+                error={errors.bookingDate}
+              />
+              {firstError === "bookingDate" && (
+                <div className={css.error}>{errors.bookingDate}</div>
+              )}
 
-            <BookingButton type="submit" textBtn="Send"></BookingButton>
-          </Form>
-        )}
+              <Field
+                name="comment"
+                as="textarea"
+                placeholder="Comment"
+                className={css.textarea}
+              />
+
+              <BookingButton type="submit" textBtn="Send"></BookingButton>
+            </Form>
+          );
+        }}
       </Formik>
 
       <ToastContainer position="top-right" autoClose={3000} />

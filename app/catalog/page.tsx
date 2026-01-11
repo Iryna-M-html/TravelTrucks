@@ -3,6 +3,7 @@
 import CampersList from "@/components/CatalogcampersList/CatalogcampersList";
 import type { Camper, EquipmentKey, FormType } from "@/types/camper";
 import { fetchCampers } from "@/lib/api/clientApi";
+import Loading from "@/components/Loading/Loading";
 import { useEffect, useState, useCallback, useRef } from "react";
 import SidebarFilters from "@/components/SidebarFilters/SidebarFilters";
 import { CamperFilters } from "@/types/filters";
@@ -97,7 +98,7 @@ export default function CatalogPage() {
           />
           <div className="listContainer">
             {loading && page === 1 ? (
-              <p className={css.statusMessage}>Loading...</p>
+              <Loading />
             ) : campers.length > 0 ? (
               <>
                 <CampersList campers={campers} />

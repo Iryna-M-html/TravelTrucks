@@ -3,6 +3,7 @@
 import { useState } from "react";
 import css from "./NavigationTabs.module.css";
 import type { Camper } from "../../types/camper";
+import Loading from "@/components/Loading/Loading";
 
 import Features from "../Features/Features";
 import Reviews from "../Reviews/Reviews";
@@ -17,7 +18,7 @@ const NavigationTabs = ({ camper }: CamperTabsProps) => {
     "features"
   );
   if (!camper) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   return (
