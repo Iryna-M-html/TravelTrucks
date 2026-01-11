@@ -6,6 +6,8 @@ import Image from "next/image";
 import ShowmoreButton from "../ShowmoreButton/ShowmoreButton";
 import { AiFillStar } from "react-icons/ai";
 
+import FavouriteHeartButton from "../FavoriteHeartButton/FavoriteHartButton";
+
 interface CampersListProps {
   campers: Camper[];
 }
@@ -37,14 +39,7 @@ const CampersList = ({ campers }: CampersListProps) => {
                 <h2 className={css.name}>{camper.name}</h2>
                 <div className={css.priceWrapper}>
                   <span className={css.price}>€{camper.price}.00</span>
-                  <button
-                    className={css.heartBtn}
-                    aria-label="Add to favorites"
-                  >
-                    <svg width="24" height="24" className={css.heartIcon}>
-                      <use href="/img/icons.svg#icon-heart"></use>
-                    </svg>
-                  </button>
+                  <FavouriteHeartButton id={camper.id} />
                 </div>
               </div>
 
