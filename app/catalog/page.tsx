@@ -67,9 +67,9 @@ export default function CatalogPage() {
       ) as Exclude<EquipmentKey, "automatic">[],
     };
 
-    currentFilters.current = filters; // Сохраняем фильтры
-    setPage(1); // Сбрасываем страницу
-    loadCampers(1, filters, true); // Загружаем заново
+    currentFilters.current = filters;
+    setPage(1);
+    loadCampers(1, filters, true);
   };
 
   const handleLoadMore = () => {
@@ -101,16 +101,16 @@ export default function CatalogPage() {
             ) : campers.length > 0 ? (
               <>
                 <CampersList campers={campers} />
-                {campers.length < total && (
+                {
                   <button
                     type="button"
                     className={css.loadMoreBtn}
                     onClick={handleLoadMore}
-                    disabled={loading}
+                    disabled={loading || campers.length >= total}
                   >
                     {loading ? "Loading..." : "Load more"}
                   </button>
-                )}
+                }
               </>
             ) : (
               <div className={css.noResults}>
